@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181
+      config:
+        enabled: true
+      discovery:
+        enabled: true
+        register: true

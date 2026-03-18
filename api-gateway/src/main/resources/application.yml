@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: dummy_route
+          uri: http://httpbin.org:80
+          predicates:
+            - Path=/dummy/**
+        - id: students_route
+          uri: lb://students-service
+          predicates:
+            - Path=/students/**
